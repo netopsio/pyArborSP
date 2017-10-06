@@ -6,7 +6,7 @@ This library utilizes the REST API interface from Arbor Networks. It's still in 
 # Example Usage
 ```
 $ cat test.py
-#!/usr/bin/env python
+#!/usr/local/bin/python3
 
 from arborsp import ArborAPI
 import json
