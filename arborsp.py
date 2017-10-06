@@ -33,12 +33,36 @@ class ArborAPI(object):
     def _post(self, url, payload):
         import requests
 
-        return request.post(
+        return requests.post(
             url,
             headers={"X-Arbux-APIToken": self.token},
             json=payload,
             verify=self.verify_ssl
         )
+
+    def _patch(self, url, payload):
+        import requests
+
+        return requests.patch(
+            url,
+            headers={"X-Arbux-APIToken": self.token},
+            json=payload,
+            verify=self.verify_ssl
+        )
+
+    def _change_mitigation_state(self, mitigation_id, status=bool()):
+        data = {
+            "data": {
+                "attributes": {
+                "ongoing": status
+                }
+            }
+        }
+        url = self._get(self.url)['links']['mitigation']
+        url += "/{}".format(mitigation_id)
+        response = self._patch(url=url, payload=data)
+
+        return response.json()
 
     def get_meta(self):
         return self._get(self.url)['meta']
@@ -56,7 +80,7 @@ class ArborAPI(object):
     def ongoing_mitigations(self, mitigation_id=None):
         if mitigation_id:
             url = str(self._get(self.url)['links']['mitigation'])
-            url = url + "/{}".format(mitigation_id)
+            url += "/{}".format(mitigation_id)
 
             return self._get(url)
         else:
@@ -86,11 +110,11 @@ class ArborAPI(object):
 
             return ongoing
 
+    def start_mitigation(self, mitigation_id):
+        return self._change_mitigation_state(mitigation_id, status=True)
+
+    def stop_mitigation(self, mitigation_id):
+        return self._change_mitigation_state(mitigation_id, status=False)
+
     def create_rtbh(self, region, pfx, duration=None, ipver='ipv4'):
-        pass
-
-    def start_rtbh(self, mitigation_id):
-        pass
-
-    def stop_rtbh(self, mitigation_id):
         pass
