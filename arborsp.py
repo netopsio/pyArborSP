@@ -47,9 +47,11 @@ class ArborAPI(object):
         return self._get(self.url)['links']
 
     def endpoint(self, endpoint):
-        url = self._get(self.url)['links'][endpoint]
-
-        return self._get(url)
+        try:
+            url = self._get(self.url)['links'][endpoint]
+            return self._get(url)
+        except KeyError:
+            return {"Error": "Endpoint {} does not exit".format(endpoint)}
 
     def ongoing_mitigations(self, mitigation_id=None):
         if mitigation_id:
