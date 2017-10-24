@@ -30,12 +30,14 @@ class ArborAPI(object):
             "Content-Type": 'application/vnd.api+json',
         }
 
-    def _get(self, url):
-        import requests
-
         if self.https_warning is False:
+            import requests
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
             requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+
+    def _get(self, url):
+        import requests
 
         return requests.get(
             url,
