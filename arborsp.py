@@ -6,6 +6,7 @@ class ArborAPI(object):
     #    "url": "https://arborsp.example.com",
     #    "token": "ASDFasdfASDFasdfASDFasdf",
     #    "verify_ssl": False,
+    #    "https_warning": False,
     # }
     #
     # 2. Call API
@@ -17,16 +18,28 @@ class ArborAPI(object):
         self.token = arbor_args['token']
         self.url = arbor_args['url']
         try:
+            self.https_warning = arbor_args['https_warning']
+        except:
+            self.https_warning = True
+        try:
             self.verify_ssl = arbor_args['verify_ssl']
         except:
             self.verify_ssl = True
+        self.headers = {
+            "X-Arbux-APIToken": self.token,
+            "Content-Type": 'application/vnd.api+json',
+        }
 
     def _get(self, url):
         import requests
 
+        if self.https_warning is False:
+            from requests.packages.urllib3.exceptions import InsecureRequestWarning
+            requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
         return requests.get(
             url,
-            headers={"X-Arbux-APIToken": self.token},
+            headers=self.headers,
             verify=self.verify_ssl
         ).json()
 
@@ -35,7 +48,7 @@ class ArborAPI(object):
 
         return requests.post(
             url,
-            headers={"X-Arbux-APIToken": self.token},
+            headers=self.headers,
             json=payload,
             verify=self.verify_ssl
         )
@@ -45,7 +58,7 @@ class ArborAPI(object):
 
         return requests.patch(
             url,
-            headers={"X-Arbux-APIToken": self.token},
+            headers=self.headers,
             json=payload,
             verify=self.verify_ssl
         )
