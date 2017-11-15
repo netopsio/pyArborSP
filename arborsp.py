@@ -2,6 +2,7 @@ class ArborAPI(object):
     """Fetches data and controls DDoS attacks from ArborSP
 
     :param arbor_auth: ``dict``
+        See below
 
     :dictionary - arbor_auth:
         * *url* (``str``) --
@@ -16,8 +17,6 @@ class ArborAPI(object):
     """
 
     def __init__(self, arbor_args):
-        """Initialize ArborAPI
-        """
         self.token = arbor_args['token']
         self.url = arbor_args['url']
         try:
@@ -83,12 +82,27 @@ class ArborAPI(object):
         return response.json()
 
     def get_meta(self):
+        """Fetch meta data from ArborSP
+        :returns: ``dict``
+
+        """
         return self._get(self.url)['meta']
 
     def get_endpoints(self):
+        """Fetch available API endpoints
+        :returns: ``dict``
+
+        """
         return self._get(self.url)['links']
 
     def endpoint(self, endpoint):
+        """Fetch data from an API endpoint
+        :param endpoint: URL of API endpoint
+        :type endpoint: ``str``
+        :returns: ``dict``
+        :raises: KeyError
+
+        """
         try:
             url = self._get(self.url)['links'][endpoint]
             return self._get(url)
@@ -96,6 +110,12 @@ class ArborAPI(object):
             return {"Error": "Endpoint {} does not exit".format(endpoint)}
 
     def ongoing_mitigations(self, mitigation_id=None):
+        """Fetch ongoing mitigations
+        :param migitation_id: tms-1234
+        :type mitigation_id: ``str`` or ``None``
+        :returns: ``dict``
+
+        """
         if mitigation_id:
             url = str(self._get(self.url)['links']['mitigation'])
             url += "/{}".format(mitigation_id)
@@ -114,6 +134,12 @@ class ArborAPI(object):
             return ongoing
 
     def ongoing_rtbhs(self, mitigation_id=None):
+        """Fetch ongoing blackhole mitigations 
+        :param migitation_id: blackhole-1234
+        :type mitigation_id: ``str`` or ``None``
+        :returns: ``dict``
+
+        """
         if mitigation_id:
             return self.ongoing_mitigations(mitigation_id)
         else:
@@ -129,7 +155,17 @@ class ArborAPI(object):
             return ongoing
 
     def start_mitigation(self, mitigation_id):
+        """Start an existing mitigation
+        :param mitigation_id: tms-1234 or blackhole-1234
+        :returns: ``dict``
+
+        """
         return self._change_mitigation_state(mitigation_id, status=True)
 
     def stop_mitigation(self, mitigation_id):
+        """Stop an existing mitigation
+        :param mitigation_id: tms-1234 or blackhole-1234
+        :returns: ``dict``
+
+        """
         return self._change_mitigation_state(mitigation_id, status=False)

@@ -51,7 +51,8 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>arbor_auth</strong> – <code class="docutils literal"><span class="pre">dict</span></code></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>arbor_auth</strong> – <code class="docutils literal"><span class="pre">dict</span></code>
+See below</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">Dictionary - arbor_auth:</th></tr>
@@ -72,37 +73,60 @@ Default: True</li>
 <dl class="method">
 <dt id="arborsp.ArborAPI.endpoint">
 <code class="descname">endpoint</code><span class="sig-paren">(</span><em>endpoint</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.endpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.endpoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Fetch data from an API endpoint
+:param endpoint: URL of API endpoint
+:type endpoint: <code class="docutils literal"><span class="pre">str</span></code>
+:returns: <code class="docutils literal"><span class="pre">dict</span></code>
+:raises: KeyError</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arborsp.ArborAPI.get_endpoints">
 <code class="descname">get_endpoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.get_endpoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.get_endpoints" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Fetch available API endpoints
+:returns: <code class="docutils literal"><span class="pre">dict</span></code></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arborsp.ArborAPI.get_meta">
 <code class="descname">get_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.get_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.get_meta" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Fetch meta data from ArborSP
+:returns: <code class="docutils literal"><span class="pre">dict</span></code></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arborsp.ArborAPI.ongoing_mitigations">
 <code class="descname">ongoing_mitigations</code><span class="sig-paren">(</span><em>mitigation_id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.ongoing_mitigations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.ongoing_mitigations" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Fetch ongoing mitigations
+:param migitation_id: tms-1234
+:type mitigation_id: <code class="docutils literal"><span class="pre">str</span></code> or <code class="docutils literal"><span class="pre">None</span></code>
+:returns: <code class="docutils literal"><span class="pre">dict</span></code></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arborsp.ArborAPI.ongoing_rtbhs">
 <code class="descname">ongoing_rtbhs</code><span class="sig-paren">(</span><em>mitigation_id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.ongoing_rtbhs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.ongoing_rtbhs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Fetch ongoing blackhole mitigations 
+:param migitation_id: blackhole-1234
+:type mitigation_id: <code class="docutils literal"><span class="pre">str</span></code> or <code class="docutils literal"><span class="pre">None</span></code>
+:returns: <code class="docutils literal"><span class="pre">dict</span></code></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arborsp.ArborAPI.start_mitigation">
 <code class="descname">start_mitigation</code><span class="sig-paren">(</span><em>mitigation_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.start_mitigation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.start_mitigation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Start an existing mitigation
+:param mitigation_id: tms-1234 or blackhole-1234
+:returns: <code class="docutils literal"><span class="pre">dict</span></code></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arborsp.ArborAPI.stop_mitigation">
 <code class="descname">stop_mitigation</code><span class="sig-paren">(</span><em>mitigation_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.stop_mitigation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.stop_mitigation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Stop an existing mitigation
+:param mitigation_id: tms-1234 or blackhole-1234
+:returns: <code class="docutils literal"><span class="pre">dict</span></code></p>
+</dd></dl>
 
 </dd></dl>
 
