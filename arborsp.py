@@ -13,10 +13,15 @@ class ArborAPI(object):
           Default: True
 
     Example:
-      ``arbor_auth = {
-            "url": "https://arbor.example.com",
-            "token": "ASDFasdfASDFasdfASDF",
-        }``
+
+    .. code:: python
+
+       arbor_auth = {
+           "url": "https://arbor.example.com",
+           "token": "ASDFasdfASDFasdfASDF",
+           "verify_ssl": True,
+           "https_warning": True,
+       }
 
     """
 
