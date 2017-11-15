@@ -6,25 +6,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>arborsp &#8212; pyArborSP 0.01a documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
+        URL_ROOT:    '../../',
         VERSION:     '0.01a',
         COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
+        FILE_SUFFIX: '',
         HAS_SOURCE:  true,
         SOURCELINK_SUFFIX: '.txt'
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -39,7 +39,7 @@
           <div class="body" role="main">
             
   <h1>Source code for arborsp</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="ArborAPI"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI">[docs]</a><span></span><span class="k">class</span> <span class="nc">ArborAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI">[docs]</a><span></span><span class="k">class</span> <span class="nc">ArborAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    1. Create Arbor Auth Dictionary</span>
 
@@ -121,20 +121,20 @@
 
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-<div class="viewcode-block" id="ArborAPI.get_meta"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.get_meta"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ArborAPI.get_endpoints"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.get_endpoints">[docs]</a>    <span class="k">def</span> <span class="nf">get_endpoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.get_endpoints"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.get_endpoints">[docs]</a>    <span class="k">def</span> <span class="nf">get_endpoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)[</span><span class="s1">&#39;links&#39;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ArborAPI.endpoint"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.endpoint">[docs]</a>    <span class="k">def</span> <span class="nf">endpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.endpoint"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.endpoint">[docs]</a>    <span class="k">def</span> <span class="nf">endpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)[</span><span class="s1">&#39;links&#39;</span><span class="p">][</span><span class="n">endpoint</span><span class="p">]</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Error&quot;</span><span class="p">:</span> <span class="s2">&quot;Endpoint </span><span class="si">{}</span><span class="s2"> does not exit&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)}</span></div>
 
-<div class="viewcode-block" id="ArborAPI.ongoing_mitigations"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.ongoing_mitigations">[docs]</a>    <span class="k">def</span> <span class="nf">ongoing_mitigations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.ongoing_mitigations"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.ongoing_mitigations">[docs]</a>    <span class="k">def</span> <span class="nf">ongoing_mitigations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">mitigation_id</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)[</span><span class="s1">&#39;links&#39;</span><span class="p">][</span><span class="s1">&#39;mitigation&#39;</span><span class="p">])</span>
             <span class="n">url</span> <span class="o">+=</span> <span class="s2">&quot;/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mitigation_id</span><span class="p">)</span>
@@ -152,7 +152,7 @@
 
             <span class="k">return</span> <span class="n">ongoing</span></div>
 
-<div class="viewcode-block" id="ArborAPI.ongoing_rtbhs"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.ongoing_rtbhs">[docs]</a>    <span class="k">def</span> <span class="nf">ongoing_rtbhs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.ongoing_rtbhs"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.ongoing_rtbhs">[docs]</a>    <span class="k">def</span> <span class="nf">ongoing_rtbhs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">mitigation_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ongoing_mitigations</span><span class="p">(</span><span class="n">mitigation_id</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -167,10 +167,10 @@
 
             <span class="k">return</span> <span class="n">ongoing</span></div>
 
-<div class="viewcode-block" id="ArborAPI.start_mitigation"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.start_mitigation">[docs]</a>    <span class="k">def</span> <span class="nf">start_mitigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.start_mitigation"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.start_mitigation">[docs]</a>    <span class="k">def</span> <span class="nf">start_mitigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_change_mitigation_state</span><span class="p">(</span><span class="n">mitigation_id</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ArborAPI.stop_mitigation"><a class="viewcode-back" href="../pyArborSP/arborsp.html#arborsp.ArborAPI.stop_mitigation">[docs]</a>    <span class="k">def</span> <span class="nf">stop_mitigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="p">):</span>
+<div class="viewcode-block" id="ArborAPI.stop_mitigation"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.stop_mitigation">[docs]</a>    <span class="k">def</span> <span class="nf">stop_mitigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_change_mitigation_state</span><span class="p">(</span><span class="n">mitigation_id</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div></div>
 </pre></div>
 
@@ -181,15 +181,15 @@
         <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Module code</a><ul>
+  <li><a href="../../">Documentation overview</a><ul>
+  <li><a href="../">Module code</a><ul>
   </ul></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="../../search/" method="get">
       <div><input type="text" name="q" /></div>
       <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
