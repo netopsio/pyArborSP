@@ -5,8 +5,7 @@ pyArborSP Code Documentation
 ============================
 
 .. toctree:
-   :maxdepth: 1
+   :maxdepth: 2
 
    pyArborSP/pyarborsp.rst
    pyArborSP/modules.rst
-

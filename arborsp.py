@@ -2,14 +2,15 @@ class ArborAPI(object):
     """Fetches data and controls DDoS attacks from ArborSP
 
     :param arbor_auth: ``dict``
-      * *url* (``str``) --
-        https://arborsp.example.com
-      * *token* (``str``) --
-        ASDFasdfASDFasdfASDFasdf
-      * *verify_ssl* (``bool``)
-        True 
-      * *https_warning* (``bool``)
-        True
+        * *url* (``str``) --
+          Example: https://arborsp.example.com
+        * *token* (``str``) --
+          Example: ASDFasdfASDFasdfASDFasd
+        * *verify_ssl* (``bool``) --
+          Default: True 
+        * *https_warning* (``bool``) --
+          Default: True
+
     """
 
     def __init__(self, arbor_args):
