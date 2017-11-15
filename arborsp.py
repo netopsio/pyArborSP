@@ -2,9 +2,8 @@ class ArborAPI(object):
     """Fetches data and controls DDoS attacks from ArborSP
 
     :param arbor_auth: ``dict``
-        See Below
 
-    :arbor_auth keys:
+    :dictionary - arbor_auth:
         * *url* (``str``) --
           Example: https://arborsp.example.com
         * *token* (``str``) --
@@ -17,6 +16,8 @@ class ArborAPI(object):
     """
 
     def __init__(self, arbor_args):
+        """Initialize ArborAPI
+        """
         self.token = arbor_args['token']
         self.url = arbor_args['url']
         try:
