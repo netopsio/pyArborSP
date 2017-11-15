@@ -44,22 +44,27 @@
 <dt id="arborsp.ArborAPI">
 <em class="property">class </em><code class="descclassname">arborsp.</code><code class="descname">ArborAPI</code><span class="sig-paren">(</span><em>arbor_args</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<ol class="arabic simple">
-<li>Create Arbor Auth Dictionary</li>
-</ol>
-<dl class="docutils">
-<dt>arbor_auth = {</dt>
-<dd>“url”: “<a class="reference external" href="https://arborsp.example.com">https://arborsp.example.com</a>”,
-“token”: “ASDFasdfASDFasdfASDFasdf”,
-“verify_ssl”: False,
-“https_warning”: False,</dd>
-</dl>
-<p>}</p>
-<ol class="arabic simple" start="2">
-<li>Call API</li>
-</ol>
-<p>arbor = ArborAPI(arbor_auth)
-arbor.ongoing_mitigations()</p>
+<p>Fetches data and controls DDoS attacks from ArborSP</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arbor_auth</strong> – <p><code class="docutils literal"><span class="pre">dict</span></code>
+* <em>url</em> (<code class="docutils literal"><span class="pre">str</span></code>) –</p>
+<blockquote>
+<div><a class="reference external" href="https://arborsp.example.com">https://arborsp.example.com</a></div></blockquote>
+<ul class="simple">
+<li><em>token</em> (<code class="docutils literal"><span class="pre">str</span></code>) –
+ASDFasdfASDFasdfASDFasdf</li>
+<li><em>verify_ssl</em> (<code class="docutils literal"><span class="pre">bool</span></code>)
+True</li>
+<li><em>https_warning</em> (<code class="docutils literal"><span class="pre">bool</span></code>)
+True</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="arborsp.ArborAPI.endpoint">
 <code class="descname">endpoint</code><span class="sig-paren">(</span><em>endpoint</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arborsp/#ArborAPI.endpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arborsp.ArborAPI.endpoint" title="Permalink to this definition">¶</a></dt>

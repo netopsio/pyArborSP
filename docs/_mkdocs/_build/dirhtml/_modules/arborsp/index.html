@@ -40,20 +40,17 @@
             
   <h1>Source code for arborsp</h1><div class="highlight"><pre>
 <div class="viewcode-block" id="ArborAPI"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI">[docs]</a><span></span><span class="k">class</span> <span class="nc">ArborAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    1. Create Arbor Auth Dictionary</span>
+    <span class="sd">&quot;&quot;&quot;Fetches data and controls DDoS attacks from ArborSP</span>
 
-<span class="sd">    arbor_auth = {</span>
-<span class="sd">       &quot;url&quot;: &quot;https://arborsp.example.com&quot;,</span>
-<span class="sd">       &quot;token&quot;: &quot;ASDFasdfASDFasdfASDFasdf&quot;,</span>
-<span class="sd">       &quot;verify_ssl&quot;: False,</span>
-<span class="sd">       &quot;https_warning&quot;: False,</span>
-<span class="sd">    }</span>
-
-<span class="sd">    2. Call API</span>
-
-<span class="sd">    arbor = ArborAPI(arbor_auth)</span>
-<span class="sd">    arbor.ongoing_mitigations()</span>
+<span class="sd">    :param arbor_auth: ``dict``</span>
+<span class="sd">      * *url* (``str``) --</span>
+<span class="sd">        https://arborsp.example.com</span>
+<span class="sd">      * *token* (``str``) --</span>
+<span class="sd">        ASDFasdfASDFasdfASDFasdf</span>
+<span class="sd">      * *verify_ssl* (``bool``)</span>
+<span class="sd">        True </span>
+<span class="sd">      * *https_warning* (``bool``)</span>
+<span class="sd">        True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arbor_args</span><span class="p">):</span>

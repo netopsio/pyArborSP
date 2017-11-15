@@ -1,18 +1,15 @@
 class ArborAPI(object):
-    """
-    1. Create Arbor Auth Dictionary
+    """Fetches data and controls DDoS attacks from ArborSP
 
-    arbor_auth = {
-       "url": "https://arborsp.example.com",
-       "token": "ASDFasdfASDFasdfASDFasdf",
-       "verify_ssl": False,
-       "https_warning": False,
-    }
-
-    2. Call API
-
-    arbor = ArborAPI(arbor_auth)
-    arbor.ongoing_mitigations()
+    :param arbor_auth: ``dict``
+      * *url* (``str``) --
+        https://arborsp.example.com
+      * *token* (``str``) --
+        ASDFasdfASDFasdfASDFasdf
+      * *verify_ssl* (``bool``)
+        True 
+      * *https_warning* (``bool``)
+        True
     """
 
     def __init__(self, arbor_args):
