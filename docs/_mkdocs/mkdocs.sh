@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ../../
+cd ../
 virtualenv env
 . env/bin/activate
 pip install -r requirements.txt
@@ -13,6 +13,6 @@ make dirhtml
 
 rsync -avz _build/dirhtml/ ../
 
-cd ../../
+cd ../
 deactivate
 rm -rf env
