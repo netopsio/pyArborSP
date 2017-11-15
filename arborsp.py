@@ -1,18 +1,19 @@
 class ArborAPI(object):
+    """
+    1. Create Arbor Auth Dictionary
 
-    # 1. Create Arbor Auth Dictionary
-    #
-    # arbor_auth = {
-    #    "url": "https://arborsp.example.com",
-    #    "token": "ASDFasdfASDFasdfASDFasdf",
-    #    "verify_ssl": False,
-    #    "https_warning": False,
-    # }
-    #
-    # 2. Call API
-    #
-    # arbor = ArborAPI(arbor_auth)
-    # arbor.ongoing_mitigations()
+    arbor_auth = {
+       "url": "https://arborsp.example.com",
+       "token": "ASDFasdfASDFasdfASDFasdf",
+       "verify_ssl": False,
+       "https_warning": False,
+    }
+
+    2. Call API
+
+    arbor = ArborAPI(arbor_auth)
+    arbor.ongoing_mitigations()
+    """
 
     def __init__(self, arbor_args):
         self.token = arbor_args['token']
@@ -130,6 +131,3 @@ class ArborAPI(object):
 
     def stop_mitigation(self, mitigation_id):
         return self._change_mitigation_state(mitigation_id, status=False)
-
-    def create_rtbh(self, region, pfx, duration=None, ipver='ipv4'):
-        pass
