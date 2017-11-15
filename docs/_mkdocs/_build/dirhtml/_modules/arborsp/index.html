@@ -43,7 +43,7 @@
     <span class="sd">&quot;&quot;&quot;Fetches data and controls DDoS attacks from ArborSP</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">      **arbor_auth** (``dict``)</span>
+<span class="sd">      **arbor_args** (``dict``)</span>
 <span class="sd">        **url** (``str``)</span>
 <span class="sd">          Example: https://arborsp.example.com</span>
 <span class="sd">        **token** (``str``)</span>
@@ -57,7 +57,7 @@
 
 <span class="sd">    .. code:: python</span>
 
-<span class="sd">       arbor_auth = {</span>
+<span class="sd">       arbor_args = {</span>
 <span class="sd">           &quot;url&quot;: &quot;https://arbor.example.com&quot;,</span>
 <span class="sd">           &quot;token&quot;: &quot;ASDFasdfASDFasdfASDF&quot;,</span>
 <span class="sd">           &quot;verify_ssl&quot;: True,</span>
@@ -133,6 +133,7 @@
 
 <div class="viewcode-block" id="ArborAPI.get_meta"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Fetch meta data from ArborSP</span>
+
 <span class="sd">        :returns: ``dict``</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -140,6 +141,7 @@
 
 <div class="viewcode-block" id="ArborAPI.get_endpoints"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.get_endpoints">[docs]</a>    <span class="k">def</span> <span class="nf">get_endpoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Fetch available API endpoints</span>
+
 <span class="sd">        :returns: ``dict``</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -147,6 +149,7 @@
 
 <div class="viewcode-block" id="ArborAPI.endpoint"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.endpoint">[docs]</a>    <span class="k">def</span> <span class="nf">endpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Fetch data from an API endpoint</span>
+
 <span class="sd">        :param endpoint: URL of API endpoint</span>
 <span class="sd">        :type endpoint: ``str``</span>
 <span class="sd">        :returns: ``dict``</span>
@@ -161,6 +164,7 @@
 
 <div class="viewcode-block" id="ArborAPI.ongoing_mitigations"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.ongoing_mitigations">[docs]</a>    <span class="k">def</span> <span class="nf">ongoing_mitigations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Fetch ongoing mitigations</span>
+
 <span class="sd">        :param migitation_id: tms-1234</span>
 <span class="sd">        :type mitigation_id: ``str`` or ``None``</span>
 <span class="sd">        :returns: ``dict``</span>
@@ -184,7 +188,8 @@
             <span class="k">return</span> <span class="n">ongoing</span></div>
 
 <div class="viewcode-block" id="ArborAPI.ongoing_rtbhs"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.ongoing_rtbhs">[docs]</a>    <span class="k">def</span> <span class="nf">ongoing_rtbhs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Fetch ongoing blackhole mitigations </span>
+        <span class="sd">&quot;&quot;&quot;Fetch ongoing blackhole mitigations</span>
+
 <span class="sd">        :param migitation_id: blackhole-1234</span>
 <span class="sd">        :type mitigation_id: ``str`` or ``None``</span>
 <span class="sd">        :returns: ``dict``</span>
@@ -206,6 +211,7 @@
 
 <div class="viewcode-block" id="ArborAPI.start_mitigation"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.start_mitigation">[docs]</a>    <span class="k">def</span> <span class="nf">start_mitigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Start an existing mitigation</span>
+
 <span class="sd">        :param mitigation_id: tms-1234 or blackhole-1234</span>
 <span class="sd">        :returns: ``dict``</span>
 
@@ -214,6 +220,7 @@
 
 <div class="viewcode-block" id="ArborAPI.stop_mitigation"><a class="viewcode-back" href="../../pyArborSP/arborsp/#arborsp.ArborAPI.stop_mitigation">[docs]</a>    <span class="k">def</span> <span class="nf">stop_mitigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitigation_id</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Stop an existing mitigation</span>
+
 <span class="sd">        :param mitigation_id: tms-1234 or blackhole-1234</span>
 <span class="sd">        :returns: ``dict``</span>
 

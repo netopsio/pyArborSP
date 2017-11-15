@@ -2,7 +2,7 @@ class ArborAPI(object):
     """Fetches data and controls DDoS attacks from ArborSP
 
     Args:
-      **arbor_auth** (``dict``)
+      **arbor_args** (``dict``)
         **url** (``str``)
           Example: https://arborsp.example.com
         **token** (``str``)
@@ -16,7 +16,7 @@ class ArborAPI(object):
 
     .. code:: python
 
-       arbor_auth = {
+       arbor_args = {
            "url": "https://arbor.example.com",
            "token": "ASDFasdfASDFasdfASDF",
            "verify_ssl": True,
@@ -92,6 +92,7 @@ class ArborAPI(object):
 
     def get_meta(self):
         """Fetch meta data from ArborSP
+
         :returns: ``dict``
 
         """
@@ -99,6 +100,7 @@ class ArborAPI(object):
 
     def get_endpoints(self):
         """Fetch available API endpoints
+
         :returns: ``dict``
 
         """
@@ -106,6 +108,7 @@ class ArborAPI(object):
 
     def endpoint(self, endpoint):
         """Fetch data from an API endpoint
+
         :param endpoint: URL of API endpoint
         :type endpoint: ``str``
         :returns: ``dict``
@@ -120,6 +123,7 @@ class ArborAPI(object):
 
     def ongoing_mitigations(self, mitigation_id=None):
         """Fetch ongoing mitigations
+
         :param migitation_id: tms-1234
         :type mitigation_id: ``str`` or ``None``
         :returns: ``dict``
@@ -143,7 +147,8 @@ class ArborAPI(object):
             return ongoing
 
     def ongoing_rtbhs(self, mitigation_id=None):
-        """Fetch ongoing blackhole mitigations 
+        """Fetch ongoing blackhole mitigations
+
         :param migitation_id: blackhole-1234
         :type mitigation_id: ``str`` or ``None``
         :returns: ``dict``
@@ -165,6 +170,7 @@ class ArborAPI(object):
 
     def start_mitigation(self, mitigation_id):
         """Start an existing mitigation
+
         :param mitigation_id: tms-1234 or blackhole-1234
         :returns: ``dict``
 
@@ -173,6 +179,7 @@ class ArborAPI(object):
 
     def stop_mitigation(self, mitigation_id):
         """Stop an existing mitigation
+
         :param mitigation_id: tms-1234 or blackhole-1234
         :returns: ``dict``
 
