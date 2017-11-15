@@ -4,8 +4,8 @@
 pyArborSP Code Documentation
 ============================
 
-.. toctree:
+.. toctree::
    :maxdepth: 2
 
-   pyArborSP/pyarborsp.rst
+   pyArborSP/arborsp.rst
    pyArborSP/modules.rst

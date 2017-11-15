@@ -1,7 +1,10 @@
 class ArborAPI(object):
     """Fetches data and controls DDoS attacks from ArborSP
 
-    :param arbor_auth: ``dict`` --
+    :param arbor_auth: ``dict``
+        See Below
+
+    :arbor_auth keys:
         * *url* (``str``) --
           Example: https://arborsp.example.com
         * *token* (``str``) --
