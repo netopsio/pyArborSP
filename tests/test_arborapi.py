@@ -3,7 +3,7 @@ import unittest
 
 class TestArborAPI(unittest.TestCase):
 
-    def setUp(self):
+    def setUp(cls):
         pass
 
     def test_meta(self):
@@ -23,3 +23,6 @@ class TestArborAPI(unittest.TestCase):
 
     def test_stop(self):
         pass
+
+if __name__ == "__main__":
+    unittest.main(failfast=True)

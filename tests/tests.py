@@ -5,12 +5,12 @@ import sys
 
 
 def all_tests():
-    from .test_pep8 import TestPep8
-    from .test_arborapi import TestArborAPI
+    from test_pep8 import TestPep8
+    from test_arborapi import TestArborAPI
 
     suite = unittest.TestSuite()
-    suite.addTest(TestPep8)
-    suite.addTest(TestArborAPI)
+    suite.addTest(unittest.makeSuite(TestPep8))
+    suite.addTest(unittest.makeSuite(TestArborAPI))
 
     return suite
 
